@@ -11,5 +11,7 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql"
-  ]
+  ],
+  "tsserver.formatOnType": true,
+  "prettier.disableSuccessMessage": true
 }
