@@ -41,9 +41,6 @@ function! Term()
     execute 'T clear'
 endfunction
 
-" map <C-b> :belowright Tnew<CR>
-" map <S-b> :vertical Tnew<CR><ESC>:vertical resize 75<CR><i>
-
 nnoremap <silent> K :call CocAction('doHover')<CR>
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -61,9 +58,9 @@ let g:coc_global_extensions = [
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
+" Auto open NERDTree 
 " autocmd VimEnter * NERDTree 
 " autocmd VimEnter * wincmd l
-
 
 command! -nargs=1 Prettier :CocCommand prettier.formatFile
 

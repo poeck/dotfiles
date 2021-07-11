@@ -1,26 +1,3 @@
-#set fish_greeting "
-#
-#        /`-._
-#      /_,.._`:-          
-#  ,.-'  ,   `-:..-')      
-# : o ):';      _  {      
-#  `-._ `'__,.-'\`-.)
-#      `\\  \,.-'`
-#
-# "
-
-# function fish_greeting
-# echo ""
-# echo  "        /`-._            " 
-# echo "      /_,.._`:-         "(set_color grey) Time:  (set_color magenta; date +%T; set_color normal)
-# echo "  ,.-'  ,   `-:..-')  	"(set_color grey) Date:  (set_color red; date '+%m/%d/%y'; set_color normal)
-# echo " : o ):';      _  {     "(set_color grey) Host:  (set_color green)paul@koeck(set_color normal)
-# echo "  `-._ `'__,.-'\`-.)    "(set_color grey) Site: (set_color blue)paul.koeck.dev(set_color normal)
-# echo "      `\\  \,.-'`         "
-# echo ""
-# echo ""
-# end
-
 function fish_greeting 
 end
 
@@ -33,10 +10,6 @@ set -g theme_display_user yes
 set -g theme_hide_hostname no
 set -g theme_hostname always
 
-# aliases
-# alias ls "exa --icons"
-# alias ll "exa --icons"
-# alias ls "/usr/bin/exa -l -T --icons --no-permissions --no-user --no-filesize"
 alias expl "nautilus --browser ."
 alias g git
 command -qv nvim && alias vim nvim
@@ -86,8 +59,3 @@ end
 
 # chips
 if [ -e ~/.config/chips/build.fish ] ; . ~/.config/chips/build.fish ; end
-
-# neofetch
-
-alias albion="node /home/paul/Projects/albiontools/dist/app.js"
-alias albiongame="~/albiononline/Albion-Online"
