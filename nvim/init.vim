@@ -24,7 +24,20 @@ Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'wakatime/vim-wakatime'
+
+
+call vundle#end()           
+filetype plugin indent on 
+
+
 inoremap jk <ESC>
+tnoremap jk <C-\><C-n>
 nmap <C-n> :NERDTreeToggle<CR>
 
 map <C-c> :noh<CR>
@@ -33,15 +46,24 @@ map <C-w> :q!<CR>
 map <S-q> :qa!<CR>
 map <C-s> :w<CR>
 map <C-t> :call Term()<CR> 
+map <S-w> :call CloseAllToRight()<CR> 
+
+function! CloseAllToRight() 
+   let current = bufnr("%")
+   execute current+1 ',$bd!'
+endfunction
 
 function! Term() 
     let cwd = getcwd()
-    execute ':Tnew'
+    execute 'Tnew'
     execute 'T cd' cwd
     execute 'T clear'
 endfunction
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
+
+" Close Coc Windows on escape
+nmap <Esc> :call coc#float#close_all() <CR>
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -66,6 +88,7 @@ command! -nargs=1 Prettier :CocCommand prettier.formatFile
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+set ic
 set relativenumber
 set softtabstop=4
 set shiftwidth=4
@@ -129,3 +152,12 @@ let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeIgnore = ['^node_modules$']
+
+let s:prevtabnum=tabpagenr('$')
+augroup TabClosed
+    autocmd! TabEnter * :if tabpagenr('$')<s:prevtabnum && tabpagenr()>1
+                \       |   tabprevious
+                \       |endif
+                \       |let s:prevtabnum=tabpagenr('$')
+augroup END
+
