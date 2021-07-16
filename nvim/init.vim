@@ -11,16 +11,12 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jiangmiao/auto-pairs'
-Plug 'arzg/vim-colors-xcode'
 Plug 'kassio/neoterm'
 Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'rakr/vim-one'
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'vimsence/vimsence'
-Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -38,6 +34,7 @@ filetype plugin indent on
 
 inoremap jk <ESC>
 tnoremap jk <C-\><C-n>
+imap <c-s> <Esc>:w<CR>a
 nmap <C-n> :NERDTreeToggle<CR>
 
 map <C-c> :noh<CR>
@@ -77,8 +74,8 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver'
   \ ]
 
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " Auto open NERDTree 
 " autocmd VimEnter * NERDTree 
@@ -154,10 +151,3 @@ let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 
 let s:prevtabnum=tabpagenr('$')
-augroup TabClosed
-    autocmd! TabEnter * :if tabpagenr('$')<s:prevtabnum && tabpagenr()>1
-                \       |   tabprevious
-                \       |endif
-                \       |let s:prevtabnum=tabpagenr('$')
-augroup END
-
