@@ -17,6 +17,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'rakr/vim-one'
 Plug 'romgrk/barbar.nvim'
 Plug 'vimsence/vimsence'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
