@@ -22,9 +22,9 @@ set -gx PATH ~/.local/bin $PATH
 
 bind \cw 'cd ..'
 
-if status is-interactive
-  cd $HOME
-end
+# if status is-interactive
+#   cd $HOME
+# end
 
 # NodeJS
 set -gx PATH node_modules/.bin $PATH

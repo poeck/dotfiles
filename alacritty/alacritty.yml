@@ -64,7 +64,6 @@ cursor:
   style: Block
   unfocused_hollow: true
 live_config_reload: true
-working_directory: /home/paul/Projects/Frags/
 enable_experimental_conpty_backend: false
 alt_send_esc: true
 debug:

@@ -46,6 +46,12 @@ map <C-s> :w<CR>
 map <C-t> :call Term()<CR> 
 map <S-w> :call CloseAllToRight()<CR> 
 
+" Switch between windows
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+
 function! CloseAllToRight() 
    let current = bufnr("%")
    execute current+1 ',$bd!'
@@ -69,7 +75,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
