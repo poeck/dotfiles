@@ -21,15 +21,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'wakatime/vim-wakatime'
-
-
-call vundle#end()           
 filetype plugin indent on 
 
 
