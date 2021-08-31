@@ -1,53 +1,143 @@
+"------------------
+"   Plugins 
+"------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'jiangmiao/auto-pairs'
-Plug 'kassio/neoterm'
-Plug 'mattn/emmet-vim'
-Plug 'vim-airline/vim-airline'
+" Theme
 Plug 'rakr/vim-one'
-Plug 'romgrk/barbar.nvim'
-Plug 'vimsence/vimsence'
+" Icons for barbar
+Plug 'ryanoasis/vim-devicons'
+" Web icons
 Plug 'kyazdani42/nvim-web-devicons'
+" Extensions & Servers 
+Plug 'neoclide/coc.nvim'
+" File viewer
+Plug 'scrooloose/nerdtree'
+" Nerd tree highlight
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Search files
+Plug 'ctrlpvim/ctrlp.vim'
+" Javascript
+Plug 'pangloss/vim-javascript'
+" Typescript
+Plug 'leafgarland/typescript-vim'
+" JSX
+Plug 'peitalin/vim-jsx-typescript'
+" Auto pair brackets
+Plug 'jiangmiao/auto-pairs'
+" Terminal
+Plug 'kassio/neoterm'
+" HTML abbreviations
+Plug 'mattn/emmet-vim'
+" Status bar
+Plug 'vim-airline/vim-airline'
+" Tab bar
+Plug 'romgrk/barbar.nvim'
+" Discord status
+Plug 'vimsence/vimsence'
+" Auto rename tags
+Plug 'AndrewRadev/tagalong.vim'
+" Dart syntax highlight
+Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
+    
 
-filetype plugin indent on 
+"------------------
+"   Set's 
+"------------------
+set ic
+set relativenumber
+set expandtab
+set smarttab
+set autoindent
+set cindent
+set modifiable
+set noshowmode
+set termguicolors
+set notimeout
+set laststatus=2
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set background=dark
 
 
-inoremap jk <ESC>
+"------------------
+"   Remaps 
+"------------------
+
+" Set leader
+let mapleader = "\<Space>"
+
+" Any mode
+noremap F /
+noremap <leader>F /
+noremap <leader>m :
+noremap <silent> <C-c> :noh<CR>
+noremap <silent> <C-q> :q!<CR>
+noremap <silent> <S-q> :qa!<CR>
+noremap <silent> <leader>cc :bw!<CR>
+noremap <silent> <leader>q :bw!<CR>
+noremap <silent> <leader>s :w<CR>
+noremap <silent> <leader>t :call Term()<CR> 
+noremap <silent> <leader><Esc> :qa!<CR>
+noremap <silent> <leader>p :CtrlP<CR>
+noremap <silent> <leader>ca :call CloseAllButCurrent()<CR>
+
+" Normal Mode
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wl <C-W>l
+nnoremap <S-j> <PageDown>
+nnoremap <S-k> <PageUp>
+nnoremap <S-h> 0
+nnoremap <S-l> $
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
+nnoremap <silent> t :call CocAction('doHover')<CR>
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <silent> <leader>, :BufferPrevious<CR>
+nnoremap <silent> <leader>. :BufferNext<CR>
+nnoremap <silent> <leader>1 :BufferGoto 1<CR>
+nnoremap <silent> <leader>2 :BufferGoto 2<CR>
+nnoremap <silent> <leader>3 :BufferGoto 3<CR>
+nnoremap <silent> <leader>4 :BufferGoto 4<CR>
+nnoremap <silent> <leader>5 :BufferGoto 5<CR>
+nnoremap <silent> <leader>6 :BufferGoto 6<CR>
+nnoremap <silent> <leader>7 :BufferGoto 7<CR>
+nnoremap <silent> <leader>8 :BufferGoto 8<CR>
+nnoremap <silent> <leader>9 :BufferLast<CR>
+nnoremap <silent> <leader><left> :BufferMovePrevious<CR>
+nnoremap <silent> <leader><right> :BufferMoveNext<CR>
+
+" Terminal
 tnoremap jk <C-\><C-n>
-imap <c-s> <Esc>:w<CR>a
-nmap <C-n> :NERDTreeToggle<CR>
+tnoremap <Esc> <C-\><C-n>
 
-map <C-c> :noh<CR>
-map <C-q> :bw!<CR>
-map <C-w> :q!<CR>
-map <S-q> :qa!<CR>
-map <C-s> :w<CR>
-map <C-t> :call Term()<CR> 
-map <S-w> :call CloseAllToRight()<CR> 
+" Insert
+inoremap jk <ESC>
+inoremap <c-s> <Esc>:w<CR>a
 
-" Switch between windows
-nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
+" Visual
+vnoremap <S-h> 0
+vnoremap <S-l> $
 
-function! CloseAllToRight() 
-   let current = bufnr("%")
-   execute current+1 ',$bd!'
+"------------------
+"   Functions 
+"------------------
+function! CloseAllButCurrent()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+
+  if curr > 1    | silent! execute "1,".(curr-1)."bd!"     | endif
+  if curr < last | silent! execute (curr+1).",".last."bd!" | endif
 endfunction
 
+" Open a new terminal in cwd
 function! Term() 
     let cwd = getcwd()
     execute 'Tnew'
@@ -55,96 +145,38 @@ function! Term()
     execute 'T clear'
 endfunction
 
-nnoremap <silent> K :call CocAction('doHover')<CR>
 
-" Close Coc Windows on escape
-nmap <Esc> :call coc#float#close_all() <CR>
+"------------------
+"   Vars
+"------------------
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-let g:coc_global_extensions = [
-  \ 'coc-tsserver'
-  \ ]
-
-" autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-" autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-" Auto open NERDTree 
-" autocmd VimEnter * NERDTree 
-" autocmd VimEnter * wincmd l
-
-command! -nargs=1 Prettier :CocCommand prettier.formatFile
-
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-set ic
-set relativenumber
-set softtabstop=4
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set smarttab
-set autoindent
-set cindent
-set modifiable
-set noshowmode
-
-filetype indent off
-
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
-
-set background=dark
-colorscheme one
-
-set laststatus=2
+" Global
 let g:airline_theme='one'
-
-tnoremap <Esc> <C-\><C-n>
-let g:neoterm_autoinsert=1
+let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
 
+" Auto open in new tab
+let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
+
+" Set html indent 
 let g:user_emmet_settings = {
     \    'html' : {
     \        'indentation' : '    '
     \    }
     \}
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 
-nnoremap <silent>    <A-,> :BufferPrevious<CR>
-nnoremap <silent>    <A-.> :BufferNext<CR>
-nnoremap <silent>    <A-Left> :BufferMovePrevious<CR>
-nnoremap <silent>    <A-Right> :BufferMoveNext<CR>
-nnoremap <silent>    <A-1> :BufferGoto 1<CR>
-nnoremap <silent>    <A-2> :BufferGoto 2<CR>
-nnoremap <silent>    <A-3> :BufferGoto 3<CR>
-nnoremap <silent>    <A-4> :BufferGoto 4<CR>
-nnoremap <silent>    <A-5> :BufferGoto 5<CR>
-nnoremap <silent>    <A-6> :BufferGoto 6<CR>
-nnoremap <silent>    <A-7> :BufferGoto 7<CR>
-nnoremap <silent>    <A-8> :BufferGoto 8<CR>
-nnoremap <silent>    <A-9> :BufferLast<CR>
-
+" Other
 let bufferline = get(g:, 'bufferline', {})
 let bufferline.icons = 'both'
 let bufferline.maximum_length = 20
 
-let g:NERDTreeQuitOnOpen  = 1
-let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
-let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
-let g:NERDTreeGitStatusWithFlags = 1
-let g:NERDTreeIgnore = ['^node_modules$']
 
-let s:prevtabnum=tabpagenr('$')
+"------------------
+"   Other 
+"------------------
+filetype plugin indent on 
+colorscheme one

@@ -2,7 +2,6 @@
 
 My dotfiles for:
 - Alacritty
-- Fish
 - Neovim
 
 > by Paul Koeck
@@ -23,14 +22,6 @@ My dotfiles for:
 ```bash
 :PlugInstall
 ```
-
-## Fish
-### Prerequisites
-
-1. [Fish Shell](https://fishshell.com)
-2. [Fisher](https://github.com/jorgebucaran/fisher)
-
-
 ## Alacritty
 ### Prerequisites
 
