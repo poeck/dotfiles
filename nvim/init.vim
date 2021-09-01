@@ -1,4 +1,4 @@
-"------------------
+"------------------ 
 "   Plugins 
 "------------------
 call plug#begin('~/.vim/plugged')
@@ -39,6 +39,14 @@ Plug 'vimsence/vimsence'
 Plug 'AndrewRadev/tagalong.vim'
 " Dart syntax highlight
 Plug 'dart-lang/dart-vim-plugin'
+" TagBar on left side
+Plug 'majutsushi/tagbar'
+" Quick comments
+Plug 'tpope/vim-commentary'
+" Sublime multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+" Git wrapper
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
     
@@ -46,6 +54,7 @@ call plug#end()
 "------------------
 "   Set's 
 "------------------
+
 set ic
 set relativenumber
 set expandtab
@@ -72,29 +81,30 @@ let mapleader = "\<Space>"
 
 " Any mode
 noremap F /
-noremap <leader>F /
 noremap <leader>m :
 noremap <silent> <C-c> :noh<CR>
 noremap <silent> <C-q> :q!<CR>
-noremap <silent> <S-q> :qa!<CR>
 noremap <silent> <leader>cc :bw!<CR>
 noremap <silent> <leader>q :bw!<CR>
 noremap <silent> <leader>s :w<CR>
 noremap <silent> <leader>t :call Term()<CR> 
-noremap <silent> <leader><Esc> :qa!<CR>
+noremap <silent> <leader>Q :qa!<CR>
 noremap <silent> <leader>p :CtrlP<CR>
 noremap <silent> <leader>ca :call CloseAllButCurrent()<CR>
 
 " Normal Mode
-nnoremap <leader>wh <C-W>h
-nnoremap <leader>wj <C-W>j
-nnoremap <leader>wk <C-W>k
-nnoremap <leader>wl <C-W>l
-nnoremap <S-j> <PageDown>
-nnoremap <S-k> <PageUp>
+nnoremap <leader>h <C-W>h
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>l <C-W>l
+nnoremap <S-u> <PageDown>
+nnoremap <S-i> <PageUp>
+nnoremap <S-j> 10j 
+nnoremap <S-k> 10k 
 nnoremap <S-h> 0
 nnoremap <S-l> $
 nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>f :TagbarToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> t :call CocAction('doHover')<CR>
 nnoremap <silent> gd <Plug>(coc-definition)
@@ -174,9 +184,9 @@ let bufferline = get(g:, 'bufferline', {})
 let bufferline.icons = 'both'
 let bufferline.maximum_length = 20
 
-
 "------------------
 "   Other 
 "------------------
+
 filetype plugin indent on 
 colorscheme one

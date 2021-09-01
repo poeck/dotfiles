@@ -16,10 +16,14 @@ scrolling:
     y: 0
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
-font:
+# font:
+#   normal: 
+#     family: Hack Nerd Font Mono  
+#   size: 12
+font: 
   normal: 
-    family: Hack Nerd Font Mono  
-  size: 12
+    family: Cascadia Code
+  size: 14 
 colors:
   primary:
     background: '#282c34'
