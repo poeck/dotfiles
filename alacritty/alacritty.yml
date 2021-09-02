@@ -26,7 +26,7 @@ font:
   size: 14 
 colors:
   primary:
-    background: '#282c34'
+    background: '#2c292d'
     foreground: '#abb2bf'
   normal:
     black:   '#1d1f21'

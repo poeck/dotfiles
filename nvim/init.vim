@@ -3,16 +3,16 @@
 "------------------
 call plug#begin('~/.vim/plugged')
 
-" Theme
-Plug 'rakr/vim-one'
 " Icons for barbar
 Plug 'ryanoasis/vim-devicons'
 " Web icons
 Plug 'kyazdani42/nvim-web-devicons'
 " Extensions & Servers 
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " File viewer
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
+" Extended Nerdtree
+Plug 'jistr/vim-nerdtree-tabs'
 " Nerd tree highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Search files
@@ -31,6 +31,8 @@ Plug 'kassio/neoterm'
 Plug 'mattn/emmet-vim'
 " Status bar
 Plug 'vim-airline/vim-airline'
+" Airline themes
+Plug 'vim-airline/vim-airline-themes'
 " Tab bar
 Plug 'romgrk/barbar.nvim'
 " Discord status
@@ -47,6 +49,15 @@ Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+
+" Google's code formatter
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+
+" Themes
+Plug 'rakr/vim-one'
+Plug 'phanviet/vim-monokai-pro'
 
 call plug#end()
     
@@ -161,7 +172,7 @@ endfunction
 "------------------
 
 " Global
-let g:airline_theme='one'
+let g:airline_theme='bubblegum'
 let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
@@ -189,4 +200,6 @@ let bufferline.maximum_length = 20
 "------------------
 
 filetype plugin indent on 
-colorscheme one
+colorscheme monokai_pro 
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
