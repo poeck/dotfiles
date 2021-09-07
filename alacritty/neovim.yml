@@ -1,0 +1,12 @@
+window:
+  decorations: full
+  startup_mode: Fullscreen 
+draw_bold_text_with_bright_colors: true
+font: 
+  normal: 
+    family: Cascadia Code
+  size: 14 
+colors:
+  primary:
+    background: '#2c292d'
+    foreground: '#abb2bf'
