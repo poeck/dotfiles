@@ -89,9 +89,6 @@ set background=dark
 " Set leader
 let mapleader = "\<Space>"
 
-" For learning to use jk
-inoremap <Esc> NO!!!
-
 " Any mode
 noremap F /
 noremap <leader>m :
