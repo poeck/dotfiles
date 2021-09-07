@@ -50,10 +50,9 @@ Plug 'terryma/vim-multiple-cursors'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 
-" Google's code formatter
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
+" Dart lsc
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 
 " Themes
 Plug 'rakr/vim-one'
@@ -90,9 +89,13 @@ set background=dark
 " Set leader
 let mapleader = "\<Space>"
 
+" For learning to use jk
+inoremap <Esc> NO!!!
+
 " Any mode
 noremap F /
 noremap <leader>m :
+noremap <leader>o :ex ~/
 noremap <silent> <C-c> :noh<CR>
 noremap <silent> <C-q> :q!<CR>
 noremap <silent> <leader>cc :bw!<CR>
@@ -154,8 +157,8 @@ function! CloseAllButCurrent()
   let curr = bufnr("%")
   let last = bufnr("$")
 
-  if curr > 1    | silent! execute "1,".(curr-1)."bd!"     | endif
-  if curr < last | silent! execute (curr+1).",".last."bd!" | endif
+  if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
+  if curr < last | silent! execute (curr+1).",".last."bd" | endif
 endfunction
 
 " Open a new terminal in cwd
@@ -181,13 +184,19 @@ let g:neoterm_autoscroll=1
 let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 
 " Set html indent 
+let g:user_emmet_leader_key='<C-y>'
 let g:user_emmet_settings = {
     \    'html' : {
     \        'indentation' : '    '
     \    }
     \}
 let g:coc_global_extensions = [
-  \ 'coc-tsserver'
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json',
   \ ]
 
 " Other
