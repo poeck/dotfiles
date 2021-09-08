@@ -174,7 +174,7 @@ endfunction
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme='bubblegum'
 let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
