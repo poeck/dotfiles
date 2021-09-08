@@ -59,7 +59,6 @@ Plug 'rakr/vim-one'
 Plug 'phanviet/vim-monokai-pro'
 
 call plug#end()
-    
 
 "------------------
 "   Set's 
@@ -172,6 +171,10 @@ endfunction
 "------------------
 
 " Global
+let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
@@ -200,6 +203,10 @@ let g:coc_global_extensions = [
 let bufferline = get(g:, 'bufferline', {})
 let bufferline.icons = 'both'
 let bufferline.maximum_length = 20
+
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 "------------------
 "   Other 
