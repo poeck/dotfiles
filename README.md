@@ -14,10 +14,7 @@ My dotfiles for:
 ### Installation
 
 ```bash
-git clone https://github.com/paulkoeckdev/dotfiles ~/dotfiles
-cd ~/dotfiles
-chmod +x ./install.sh
-./install.sh
+curl -sLf https://raw.githubusercontent.com/paulkoeckdev/Dotfiles/main/download.sh | bash
 ```
 
 1. [Alacritty](https://github.com/alacritty/alacritty)
