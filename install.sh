@@ -1,5 +1,5 @@
 #!/bin/bash
-# .make.sh 
+# install.sh
 # This script creates symlinks from ~/ to dotfiles dir
 
 dir=~/dotfiles
