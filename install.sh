@@ -1,6 +1,5 @@
 #!/bin/bash
 # install.sh
-# This script creates symlinks from ~/ to dotfiles dir
 
 dir=~/dotfiles
 backup=~/dotfiles_old
