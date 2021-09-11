@@ -16,7 +16,7 @@ My dotfiles for:
 ```bash
 git clone https://github.com/paulkoeckdev/dotfiles ~/dotfiles
 cd ~/dotfiles
-chmox +x ./install.sh
+chmod +x ./install.sh
 ./install.sh
 ```
 
