@@ -11,11 +11,13 @@ My dotfiles for:
 
 ![alt example](https://github.com/paulkoeckdev/DotFiles/blob/main/example.png?raw=true)
 
-### Installation
+## Installation
 
 ```bash
 curl -sLf https://raw.githubusercontent.com/paulkoeckdev/Dotfiles/main/download.sh | bash
 ```
+
+## Prequerities
 
 1. [Alacritty](https://github.com/alacritty/alacritty)
 2. [Neovim](https://neovim.io/)
