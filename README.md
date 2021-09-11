@@ -1,6 +1,7 @@
 # Dotfiles
 
 My dotfiles for:
+
 - Alacritty
 - Neovim
 
@@ -10,19 +11,15 @@ My dotfiles for:
 
 ![alt example](https://github.com/paulkoeckdev/DotFiles/blob/main/example.png?raw=true)
 
-## Neovim
-### Prerequisites
-
-1. [Neovim](https://neovim.io/)
-2. [Vim-plug](https://github.com/junegunn/vim-plug)
-
 ### Installation
-1. Copy nvim/ into 
-2. Install Plugins
+
 ```bash
-:PlugInstall
+git clone https://github.com/paulkoeckdev/dotfiles ~/dotfiles
+cd ~/dotfiles
+chmox +x ./install.sh
+./install.sh
 ```
-## Alacritty
-### Prerequisites
 
 1. [Alacritty](https://github.com/alacritty/alacritty)
+2. [Neovim](https://neovim.io/)
+3. [Vim-plug](https://github.com/junegunn/vim-plug)
