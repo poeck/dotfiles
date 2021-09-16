@@ -94,7 +94,7 @@ noremap <leader>m :
 noremap <leader>o :ex ~/
 noremap <silent> <C-c> :noh<CR>
 noremap <silent> <C-q> :q!<CR>
-noremap <silent> <leader>cc :bw!<CR>
+noremap <silent> <leader>cc :close<CR> 
 noremap <silent> <leader>q :bw!<CR>
 noremap <silent> <leader>s :w<CR>
 noremap <silent> <leader>t :call Term()<CR> 
@@ -117,9 +117,7 @@ nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :TagbarToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> t :call CocAction('doHover')<CR>
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <silent> <leader>, :BufferPrevious<CR>
 nnoremap <silent> <leader>. :BufferNext<CR>
 nnoremap <silent> <leader>1 :BufferGoto 1<CR>
