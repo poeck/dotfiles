@@ -49,6 +49,8 @@ Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-multiple-cursors'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+" Search
+Plug 'jremmen/vim-ripgrep'
 
 " Dart lsc
 Plug 'natebosch/vim-lsc'
@@ -171,6 +173,7 @@ endfunction
 "------------------
 
 " Global
+let g:rg_command = 'rg --vimgrep -S'
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:airline#extensions#tabline#enabled = 0
