@@ -30,9 +30,7 @@ Plug 'kassio/neoterm'
 " HTML abbreviations
 Plug 'mattn/emmet-vim'
 " Status bar
-Plug 'vim-airline/vim-airline'
-" Airline themes
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 " Tab bar
 Plug 'romgrk/barbar.nvim'
 " Discord status
@@ -176,9 +174,6 @@ endfunction
 let g:rg_command = 'rg --vimgrep -S'
 let g:ctrlp_user_command = ['.git/', 'git ls-files --cached --others  --exclude-standard %s']
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_powerline_fonts = 0
-let g:airline_theme='bubblegum'
 let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
@@ -202,6 +197,18 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ ]
 
+" Status bar
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
 " Other
 let bufferline = get(g:, 'bufferline', {})
 let bufferline.icons = 'both'
@@ -216,6 +223,7 @@ endif
 "------------------
 
 filetype plugin indent on 
-colorscheme monokai_pro 
+" colorscheme monokai_pro 
+colorscheme one 
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
