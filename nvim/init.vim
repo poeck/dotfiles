@@ -39,8 +39,6 @@ Plug 'vimsence/vimsence'
 Plug 'AndrewRadev/tagalong.vim'
 " Dart syntax highlight
 Plug 'dart-lang/dart-vim-plugin'
-" TagBar on left side
-Plug 'majutsushi/tagbar'
 " Quick comments
 Plug 'tpope/vim-commentary'
 " Sublime multiple cursors
@@ -113,10 +111,9 @@ nnoremap <S-j> 10j
 nnoremap <S-k> 10k 
 nnoremap <S-h> 0
 nnoremap <S-l> $
-nnoremap <silent> <leader>n :NERDTreeToggle<CR>
-nnoremap <silent> <leader>f :TagbarToggle<CR>
+nnoremap <silent> <leader>f :NERDTreeToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
-nnoremap <silent> t :call CocAction('doHover')<CR>
+nnoremap <silent> f :call CocAction('doHover')<CR>
 nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <silent> <leader>, :BufferPrevious<CR>
 nnoremap <silent> <leader>. :BufferNext<CR>
