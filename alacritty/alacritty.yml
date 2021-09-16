@@ -22,12 +22,18 @@ draw_bold_text_with_bright_colors: true
 #   size: 12
 font: 
   normal: 
-    family: Cascadia Code
+    family: CascadiaCode Nerd Font
   size: 14 
 colors:
   primary:
-    background: '#2c292d'
+    # Monokai
+    # background: '#2c292d'
+    # foreground: '#abb2bf'
+    
+    # One
+    background: '#282c34'
     foreground: '#abb2bf'
+
   normal:
     black:   '#1d1f21'
     red:     '#cc6666'
