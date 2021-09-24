@@ -20,5 +20,5 @@ curl -sLf https://raw.githubusercontent.com/paulkoeckdev/Dotfiles/main/download.
 ## Prequerities
 
 1. [Alacritty](https://github.com/alacritty/alacritty)
-2. [Neovim](https://neovim.io/)
+2. [Neovim](https://neovim.io/) (Latest)
 3. [Vim-plug](https://github.com/junegunn/vim-plug)
