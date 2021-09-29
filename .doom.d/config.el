@@ -16,9 +16,20 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-; (map! :leader
-;      :desc "Save file"
-;      "s"  #'save-buffer)
+(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.xml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+
+(use-package emmet-mode) 
+(add-hook 'web-mode-hook  'emmet-mode)
+
+(use-package prettier-js) 
+(add-hook 'web-mode-hook 'prettier-js-mode)
+; (add-hook 'after-init-hook #'global-prettier-mode)
 
 (use-package multi-vterm
 	:config
@@ -54,3 +65,9 @@
 	(evil-define-key 'normal vterm-mode-map (kbd "i")        #'evil-insert-resume)
 	(evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
 	(evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
+
+(use-package web-mode
+  :mode (("\\.tsx" . web-mode)
+                ("\\.jsx" . web-mode)))
+
+(map! :i "C-S-v" #'clipboard-yank)
