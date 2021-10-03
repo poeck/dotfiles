@@ -15,6 +15,9 @@
 (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
+
+(add-to-list 'auto-mode-alist '("\\.dart\\'" . dart-mode))
 
 (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.xml\\'" . web-mode))
@@ -30,6 +33,16 @@
 (use-package prettier-js) 
 (add-hook 'web-mode-hook 'prettier-js-mode)
 ; (add-hook 'after-init-hook #'global-prettier-mode)
+
+(use-package dart-mode
+  :hook (dart-mode . flutter-test-mode))
+
+(use-package flutter
+  :after dart-mode
+  :bind (:map dart-mode-map
+              ("C-M-x" . #'flutter-run-or-hot-reload))
+  :custom
+  (flutter-sdk-path "/snap/bin/flutter/"))
 
 (use-package multi-vterm
 	:config
