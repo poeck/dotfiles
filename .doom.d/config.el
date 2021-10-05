@@ -18,7 +18,7 @@
 ;;       Style
 ;; -----------------
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 (setq org-directory "~/org/")
 (setq display-line-numbers-type "relative")
 (setq default-frame-alist '((undecorated . t)))
