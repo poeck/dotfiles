@@ -20,7 +20,7 @@
 
 (setq doom-theme 'doom-gruvbox)
 (setq org-directory "~/org/")
-(setq display-line-numbers-type "relative")
+(setq display-line-numbers-type 'relative)
 (setq default-frame-alist '((undecorated . t)))
 
 ;; -----------------
@@ -92,5 +92,9 @@
 ;; -----------------
 ;;       Maps
 ;; -----------------
+
+(map! :leader
+      :desc "Next vterm"
+      "t n" #'multi-vterm-next)
 
 (map! :i "C-S-v" #'clipboard-yank)
