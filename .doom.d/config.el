@@ -42,6 +42,18 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 (add-to-list 'default-frame-alist '(fullscreen . fullheight))
 
+;; -----------------
+;;   Multi-Cursor
+;; -----------------
+
+(require 'multiple-cursors)
+
+(map! :leader
+      :desc "Next vterm"
+      "t n" #'multi-vterm-next)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-,") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-S-,") 'mc/mark-all-like-this)
 
 ;; -----------------
 ;;     Web-Mode
@@ -55,9 +67,17 @@
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 
+;; Typescript
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-tsx-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-tsx-mode))
+
+;; Javascript
+(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . javascript-mode))
+
 ;; Hooks
 (add-hook 'web-mode-hook 'prettier-js-mode)
-(add-hook 'web-mode-hook  'emmet-mode)
+(add-hook 'web-mode-hook  'emmet-preview-mode)
 
 ;; -----------------
 ;;     Flutter
