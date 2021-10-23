@@ -18,7 +18,8 @@
 ;;       Style
 ;; -----------------
 
-(setq doom-theme 'doom-gruvbox)
+;; (setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-monokai-ristretto)
 (setq org-directory "~/org/")
 (setq display-line-numbers-type 'relative)
 (setq default-frame-alist '((undecorated . t)))
@@ -99,13 +100,15 @@
 ;; -----------------
 
 (use-package multi-vterm
-	:config
-	(add-hook 'vterm-mode-hook
-	(lambda ()
-	(setq-local evil-insert-state-cursor 'box)
-	(evil-insert-state)))
-	(define-key vterm-mode-map [return] #'vterm-send-return)
-	(setq vterm-keymap-exceptions nil)
+        :config
+        (add-hook 'vterm-mode-hook
+        (lambda ()
+        (setq-local evil-insert-state-cursor 'box)
+        (evil-insert-state)))
+        (define-key vterm-mode-map [return] #'vterm-send-return)
+        (define-key vterm-mode-map [C-S-v] #'term-paste)
+        (define-key vterm-mode-map [C-c] #'vterm-send-C-c)
+        (setq vterm-keymap-exceptions nil)
 )
 
 
