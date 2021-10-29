@@ -15,7 +15,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#0d0d0d" "#6C7986"))
  '(objed-cursor-color "#FC6A5D")
  '(package-selected-packages
-   '(typescript-mode monokai-pro-theme multiple-cursors pandoc dart-mode flutter prettier-js emmet-mode web-mode rjsx-mode multi-vterm))
+   '(auto-complete prettier typescript-mode monokai-pro-theme multiple-cursors pandoc dart-mode flutter emmet-mode web-mode rjsx-mode multi-vterm))
  '(pdf-view-midnight-colors (cons "#FFFFFF" "#292A30"))
  '(rustic-ansi-faces
    ["#292A30" "#FC6A5D" "#67B7A4" "#D0BF68" "#5DD8FF" "#D0A8FF" "#8abeb7" "#FFFFFF"])
