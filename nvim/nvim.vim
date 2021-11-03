@@ -3,6 +3,8 @@
 "------------------
 call plug#begin('~/.vim/plugged')
 
+" Auto detect indentation
+Plug 'roryokane/detectindent'
 " Icons for barbar
 Plug 'ryanoasis/vim-devicons'
 " Web icons
@@ -15,8 +17,6 @@ Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 " Nerd tree highlight
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Search files
-Plug 'ctrlpvim/ctrlp.vim'
 " Javascript
 Plug 'pangloss/vim-javascript'
 " Typescript
@@ -47,6 +47,10 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 " Search
 Plug 'jremmen/vim-ripgrep'
+" Used with telescope
+Plug 'nvim-lua/plenary.nvim'
+" Fuzzy File finder
+Plug 'nvim-telescope/telescope.nvim'
 
 " Dart lsc
 Plug 'natebosch/vim-lsc'
@@ -91,13 +95,10 @@ noremap F /
 noremap <leader>m :
 noremap <leader>o :ex ~/
 noremap <silent> <C-c> :noh<CR>
-noremap <silent> <C-q> :q!<CR>
-noremap <silent> <leader>cc :close<CR>
-noremap <silent> <leader>q :bw!<CR>
+noremap <silent> <leader>d :BufferClose<CR>
 noremap <silent> <leader>s :w<CR>
+noremap <silent> <leader>a <kDivide>
 noremap <silent> <leader>t :call Term()<CR>
-noremap <silent> <leader>Q :qa!<CR>
-noremap <silent> <leader>p :CtrlP<CR>
 noremap <silent> <leader>ca :call CloseAllButCurrent()<CR>
 
 " Normal Mode
@@ -105,16 +106,30 @@ nnoremap <leader>h <C-W>h
 nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
-nnoremap <S-u> <PageDown>
-nnoremap <S-i> <PageUp>
-nnoremap <S-j> 10j
-nnoremap <S-k> 10k
+nnoremap <leader>wv :vs<CR> 
+nnoremap <leader>wh :split<CR> 
+nnoremap <leader>ws :split<CR> 
+nnoremap <leader>wd :close[!]<CR> 
+nnoremap <leader>wc :close[!]<CR> 
+nnoremap <leader>wq :close[!]<CR> 
+nnoremap <S-j> <PageDown>
+nnoremap <S-k> <PageUp>
 nnoremap <S-h> 0
 nnoremap <S-l> $
-nnoremap <silent> <leader>f :NERDTreeToggle<CR>
+nnoremap <silent> <leader><space> <cmd>Telescope find_files<CR>
+nnoremap <silent> <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <silent> <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
+nnoremap <silent> <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>fl :NERDTreeToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
-nnoremap <silent> f :call CocAction('doHover')<CR>
+nnoremap <silent> <S-h> :call CocAction('doHover')<CR>
 nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <silent> <leader>bf <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>bb <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>bd :BufferClose<CR>
+nnoremap <silent> <leader>bl :BufferPrevious<CR>
+nnoremap <silent> <leader>bn :BufferNext<cr>
 nnoremap <silent> <leader>, :BufferPrevious<CR>
 nnoremap <silent> <leader>. :BufferNext<CR>
 nnoremap <silent> <leader>1 :BufferGoto 1<CR>
@@ -218,7 +233,13 @@ endif
 "------------------
 
 filetype plugin indent on
-" colorscheme monokai_pro
-colorscheme one
+colorscheme monokai_pro
+" colorscheme one
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command Reload :source $MYVIMRC
+
+augroup DetectIndent
+   autocmd!
+   autocmd BufReadPost *  DetectIndent
+augroup END

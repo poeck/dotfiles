@@ -6,10 +6,10 @@
 " |_|_| |_|_|\__(_)_/ |_|_| |_| |_|
 "
 
-" Is running in Visual Studio Code
 if exists('g:vscode')
+   " Load vscode config
    source $HOME/.config/nvim/vscode.vim
-" Is running in NeoVim
 else
+   " Load nvim config
    source $HOME/.config/nvim/nvim.vim
 endif

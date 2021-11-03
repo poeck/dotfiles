@@ -12,13 +12,14 @@ nnoremap <leader>k :call VSCodeNotify('workbench.action.navigateUp')<CR>
 nnoremap <leader>l :call VSCodeNotify('workbench.action.navigateRight')<CR>
 
 " Window 
-nnoremap <leader>wv :call VSCodeNotify('workbench.action.splitEditor')<CR>
+nnoremap <leader>wv :call VSCodeNotify('workbench.action.splitEditorRight')<CR>
 nnoremap <leader>ws :call VSCodeNotify('workbench.action.splitEditorDown')<CR>
 nnoremap <leader>wh :call VSCodeNotify('workbench.action.splitEditorDown')<CR>
+nnoremap <leader>wq :call VSCodeNotify('workbench.action.closeEditorsAndGroup')<CR>
 nnoremap <leader>d :call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 
 " Terminal
-nnoremap <leader>tt  :call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
+nnoremap <leader>tt  :call VSCodeNotify('workbench.action.togglePanel')<CR>
 nnoremap <leader>tf  :call VSCodeNotify('terminal.focus')<CR>
 nnoremap <leader>tn  :call VSCodeNotify('workbench.action.terminal.new')<CR>
 
@@ -36,5 +37,5 @@ nnoremap <leader>9  :call VSCodeNotify('workbench.action.openEditorAtIndex9')<CR
 " Other
 nnoremap <leader>s :call VSCodeNotify('workbench.action.files.save')<CR>
 nnoremap <leader><space>  :call VSCodeNotify('workbench.action.quickOpen')<CR>
-nnoremap <leader>f  :call VSCodeNotify('vscode-neovim.ctrl-f')<CR>
+nnoremap <leader>f  :call VSCodeNotify('workbench.view.explorer')<CR>
 nnoremap <leader>r  :call VSCodeNotify('workbench.action.reloadWindow')<CR>

@@ -1,7 +1,7 @@
 window:
-  padding:
-    x: 30 
-    y: 30
+  # padding:
+    # x: 30 
+    # y: 30
   dynamic_padding: false
   decorations: full
   startup_mode: Fullscreen 
@@ -27,12 +27,12 @@ font:
 colors:
   primary:
     # Monokai
-    # background: '#2c292d'
-    # foreground: '#abb2bf'
+    background: '#2c292d'
+    foreground: '#abb2bf'
     
     # One
-    background: '#282c34'
-    foreground: '#abb2bf'
+    # background: '#282c34'
+    # foreground: '#abb2bf'
 
   normal:
     black:   '#1d1f21'
