@@ -76,6 +76,7 @@ set modifiable
 set noshowmode
 set termguicolors
 set notimeout
+set hidden
 set laststatus=2
 set softtabstop=4
 set shiftwidth=4
@@ -95,6 +96,7 @@ noremap F /
 noremap <leader>m :
 noremap <leader>o :ex ~/
 noremap <silent> <C-c> :noh<CR>
+noremap <silent> <S-q> :qa!<CR>
 noremap <silent> <leader>d :BufferClose<CR>
 noremap <silent> <leader>s :w<CR>
 noremap <silent> <leader>a <kDivide>
@@ -109,9 +111,9 @@ nnoremap <leader>l <C-W>l
 nnoremap <leader>wv :vs<CR> 
 nnoremap <leader>wh :split<CR> 
 nnoremap <leader>ws :split<CR> 
-nnoremap <leader>wd :close[!]<CR> 
-nnoremap <leader>wc :close[!]<CR> 
-nnoremap <leader>wq :close[!]<CR> 
+nnoremap <leader>wd :close<CR> 
+nnoremap <leader>wc :close<CR> 
+nnoremap <leader>wq :close<CR> 
 nnoremap <S-j> <PageDown>
 nnoremap <S-k> <PageUp>
 nnoremap <S-h> 0
@@ -120,7 +122,8 @@ nnoremap <silent> <leader><space> <cmd>Telescope find_files<CR>
 nnoremap <silent> <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <silent> <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
-nnoremap <silent> <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>fj <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>fk <cmd>Telescope file_browser<CR>
 nnoremap <silent> <leader>fl :NERDTreeToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> <S-h> :call CocAction('doHover')<CR>
@@ -128,6 +131,7 @@ nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
 nnoremap <silent> <leader>bf <cmd>Telescope buffers<CR>
 nnoremap <silent> <leader>bb <cmd>Telescope buffers<CR>
 nnoremap <silent> <leader>bd :BufferClose<CR>
+nnoremap <silent> <leader>ba :call DeleteInactiveBufs()<CR>
 nnoremap <silent> <leader>bl :BufferPrevious<CR>
 nnoremap <silent> <leader>bn :BufferNext<cr>
 nnoremap <silent> <leader>, :BufferPrevious<CR>
@@ -175,6 +179,21 @@ function! Term()
     execute 'T clear'
 endfunction
 
+function! DeleteInactiveBufs()
+    let tablist = []
+    for i in range(tabpagenr('$'))
+        call extend(tablist, tabpagebuflist(i + 1))
+    endfor
+
+    let nWipeouts = 0
+    for i in range(1, bufnr('$'))
+        if bufexists(i) && !getbufvar(i,"&mod") && index(tablist, i) == -1
+            silent exec 'bwipeout' i
+            let nWipeouts = nWipeouts + 1
+        endif
+    endfor
+    echomsg nWipeouts . ' buffer(s) wiped out'
+endfunction
 
 "------------------
 "   Vars
@@ -193,10 +212,19 @@ let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 
 " Set html indent
 let g:user_emmet_leader_key='<C-y>'
+" Fix Tab
+let g:user_emmet_expandabbr_key='<Tab>'
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 let g:user_emmet_settings = {
     \    'html' : {
-    \        'indentation' : '    '
-    \    }
+    \        'indentation' : '  '
+    \    },
+    \   'javascript' : {
+    \        'extends' : 'jsx',
+    \   },
+    \   'typescript' : {
+    \        'extends' : 'tsx',
+    \   },
     \}
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -209,7 +237,7 @@ let g:coc_global_extensions = [
 
 " Status bar
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'monokai_pro',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -243,3 +271,15 @@ augroup DetectIndent
    autocmd!
    autocmd BufReadPost *  DetectIndent
 augroup END
+
+lua << EOF
+require('telescope').setup{
+ defaults = {
+    mappings = {
+      i = {
+        ["<Esc>"] = "close"
+      }
+    }
+  },
+}
+EOF

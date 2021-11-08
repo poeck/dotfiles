@@ -14,7 +14,7 @@ My dotfiles for:
 ## Installation
 
 ```bash
-curl -sLf https://raw.githubusercontent.com/paulkoeckdev/Dotfiles/main/download.sh | bash
+curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/download.sh | bash
 ```
 
 ## Prequerities

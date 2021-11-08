@@ -4,7 +4,7 @@
 dir=~/dotfiles
 backup=~/dotfiles_old
 config="nvim alacritty"
-home=".doom.d"
+home=".doom.d tmux/.tmux.conf"
 
 echo ""
 echo $"Creating $backup to backup files."
