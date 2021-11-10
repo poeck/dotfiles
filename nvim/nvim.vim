@@ -124,7 +124,7 @@ nnoremap <silent> <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <silent> <leader>fj <cmd>Telescope buffers<CR>
 nnoremap <silent> <leader>fk <cmd>Telescope file_browser<CR>
-nnoremap <silent> <leader>fl :NERDTreeToggle<CR>
+nnoremap <silent> <leader>fl :NERDTreeTabsToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> <S-h> :call CocAction('doHover')<CR>
 nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
