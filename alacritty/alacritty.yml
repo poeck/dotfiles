@@ -18,13 +18,15 @@ scrolling:
 draw_bold_text_with_bright_colors: true
 font: 
   normal: 
-    family: CascadiaCode Nerd Font
+    family: CascadiaCode Nerd Font 
+    # family: Hack Nerd Font 
   size: 14 
   use_thin_strokes: true
 colors:
   primary:
     # Monokai
-    background: '#2c292d'
+    # background: '#2c292d'
+    background: '#303030'
     foreground: '#abb2bf'
     
     # One
