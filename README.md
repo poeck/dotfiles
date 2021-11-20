@@ -4,6 +4,7 @@ My personal Dotfiles, including:
 
 - Alacritty
 - Neovim
+- fish
 - tmux
 
 > by Paul Koeck
