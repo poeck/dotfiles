@@ -1,9 +1,27 @@
+colors:
+  primary:
+    background: "0x2c2e34"
+    foreground: "0xc5cdd9"
+  normal:
+    black: "0x3e4249"
+    red: "0xec7279"
+    green: "0xa0c980"
+    yellow: "0xdeb974"
+    blue: "0x6cb6eb"
+    magenta: "0xd38aea"
+    cyan: "0x5dbbc1"
+    white: "0xc5cdd9"
+  bright:
+    black: "0x3e4249"
+    red: "0xec7279"
+    green: "0xa0c980"
+    yellow: "0xdeb974"
+    blue: "0x6cb6eb"
+    magenta: "0xd38aea"
+    cyan: "0x5dbbc1"
+    white: "0xc5cdd9"
 window:
-  # padding:
-    # x: 30 
-    # y: 30
-  dynamic_padding: false
-  decorations: full
+  decorations: None 
   startup_mode: Fullscreen 
 scrolling:
   history: 10000
@@ -15,71 +33,38 @@ scrolling:
     x: 0
     y: 0
   use_thin_strokes: true
-draw_bold_text_with_bright_colors: true
-font: 
-  normal: 
-    family: CascadiaCode Nerd Font 
-    # family: Hack Nerd Font 
-  size: 14 
-  use_thin_strokes: true
-colors:
-  primary:
-    # Monokai
-    # background: '#2c292d'
-    background: '#303030'
-    foreground: '#abb2bf'
-    
-    # One
-    # background: '#282c34'
-    # foreground: '#abb2bf'
-
+draw_bold_text_with_bright_colors: false 
+font:
   normal:
-    black:   '#1d1f21'
-    red:     '#cc6666'
-    green:   '#b5bd68'
-    yellow:  '#f0c674'
-    blue:    '#81a2be'
-    magenta: '#b294bb'
-    cyan:    '#8abeb7'
-    white:   '#c5c8c6'
-  bright:
-    black:   '#666666'
-    red:     '#d54e53'
-    green:   '#b9ca4a'
-    yellow:  '#e7c547'
-    blue:    '#7aa6da'
-    magenta: '#c397d8'
-    cyan:    '#70c0b1'
-    white:   '#eaeaea'
-  dim:
-    black:   '#131415'
-    red:     '#864343'
-    green:   '#777c44'
-    yellow:  '#9e824c'
-    blue:    '#556a7d'
-    magenta: '#75617b'
-    cyan:    '#5b7d78'
-    white:   '#828482'
-  indexed_colors: []
-background_opacity: 1.0 
+    family: Droid Sans Mono NF 
+    style: Regular
+  bold:
+    family: Droid Sans Mono NF 
+    style: Bold
+  italic:
+    family: Droid Sans Mono NF 
+    style: Italic
+  size: 12.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+background_opacity: 1
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 mouse:
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
   hide_when_typing: true 
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-  save_to_clipboard: false
 cursor:
-  style: Block
+  style: Underline 
   unfocused_hollow: true
+  vi_mode_style:
+    shape: Underline 
 live_config_reload: true
-enable_experimental_conpty_backend: false
-alt_send_esc: true
-debug:
-  render_timer: false
-  persistent_logging: false
-  log_level: Warn
-  print_events: false
-  ref_test: false
+env:
+  TERM: xterm-256color
+shell:
+  program: /bin/fish
+  args:
+    - --command="tmux"

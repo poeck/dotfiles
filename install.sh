@@ -3,12 +3,13 @@
 
 dir=~/dotfiles
 backup=~/dotfiles_old
-config="nvim alacritty"
+config="nvim alacritty omf"
 tmux=".tmux.conf .tmux.conf.local"
-home=".doom.d"
+home=".doom.d .tmux"
 
 echo ""
 echo $"Creating $backup to backup files."
+rm -rf $backup
 mkdir -p $backup
 echo ""
 
@@ -19,7 +20,7 @@ for config in $config; do
 done
 
 for file in $tmux; do
-    mv ~/$folder $backup
+    mv ~/$file $backup
     echo "Creating symlink for $file in ~ directory."
     ln -s $dir/tmux/$file ~/$file
 done

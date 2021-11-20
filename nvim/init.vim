@@ -11,5 +11,10 @@ if exists('g:vscode')
    source $HOME/.config/nvim/vscode.vim
 else
    " Load nvim config
-   source $HOME/.config/nvim/nvim.vim
+   source $HOME/.config/nvim/plugins.vim
+   source $HOME/.config/nvim/options.vim
+   source $HOME/.config/nvim/mappings.vim
+   source $HOME/.config/nvim/vars.vim
+   source $HOME/.config/nvim/functions.vim
+   source $HOME/.config/nvim/other.vim
 endif
