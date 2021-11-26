@@ -7,6 +7,7 @@ colorscheme sonokai
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command Reload :source $MYVIMRC
+command! Tw :silent exec "!rustywind --write ."
 
 " Detect Indentation
 augroup DetectIndent
