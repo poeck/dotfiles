@@ -35,6 +35,9 @@ success() {
 # New line at beginning 
 echo
 
+info "Cloning repo to $dir"
+git clone https://github.com/poeck/dotfiles $dir
+
 # Initialize Backup
 info $"Creating \"$backup\" to backup files."
 rm -rf $backup

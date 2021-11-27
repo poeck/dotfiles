@@ -16,13 +16,13 @@ My personal Dotfiles, including:
 ## Installation
 
 ```bash
-curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/download.sh | bash
+curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/install.sh | bash
 ```
 
 ### Full Installation on Ubuntu
 
 ```bash
-curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/ubuntu.sh | bash
+sudo curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/ubuntu.sh | bash
 ```
 
 ## Prequerities
