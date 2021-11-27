@@ -38,9 +38,6 @@ echo
 if [ -d "$dir" ]; then
     info "Cloning repo to $dir"
     git clone https://github.com/poeck/dotfiles $dir
-else
-    cd $dir
-    git pull
 fi
 
 # Initialize Backup
