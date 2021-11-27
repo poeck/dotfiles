@@ -22,7 +22,7 @@ curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/download.sh | ba
 ### Full Installation on Ubuntu
 
 ```bash
-curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/bash.sh | bash
+curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/ubuntu.sh | bash
 ```
 
 ## Prequerities
