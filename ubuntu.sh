@@ -12,5 +12,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 sudo apt install tmux -y
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+sudo apt install fish -y
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+sudo chsh -s `which fish`
+fish
+omf install zeit
 curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/install.sh | bash
+
+chsh -s `which fish`

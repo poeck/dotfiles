@@ -14,7 +14,7 @@ FgWhite='\e[37m'
 # Variables
 dir=~/dotfiles
 backup=~/dotfiles_old
-config="nvim alacritty omf"
+config="nvim alacritty omf fish"
 tmux=".tmux.conf .tmux.conf.local"
 home=".doom.d .tmux"
 
