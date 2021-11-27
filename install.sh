@@ -35,8 +35,13 @@ success() {
 # New line at beginning 
 echo
 
-info "Cloning repo to $dir"
-git clone https://github.com/poeck/dotfiles $dir
+if [ -d "$dir" ]; then
+    info "Cloning repo to $dir"
+    git clone https://github.com/poeck/dotfiles $dir
+else
+    cd $dir
+    git pull
+fi
 
 # Initialize Backup
 info $"Creating \"$backup\" to backup files."
@@ -45,20 +50,27 @@ mkdir -p $backup
 
 # Files in .config dir
 for config in $config; do
-    mv ~/.config/$config $backup 
+    if [ -d "~/.config/$config" ]; then
+        mv ~/.config/$config $backup 
+    fi
     info "Creating symlink to $config in \"~/.config\"."
     ln -s $dir/$config ~/.config/
 done
 
 # Files in ~
 for file in $tmux; do
-    mv ~/$file $backup
+    if [ -d "~/$file" ]; then
+        mv ~/$file $backup
+    fi
     info "Creating symlink for $file in \"~\"."
     ln -s $dir/tmux/$file ~/$file
 done
 
 # Folders in ~
 for folder in $home; do
+    if [ -d "~/$folder" ]; then
+        mv ~/$folder $backup
+    fi
     mv ~/$folder $backup
     info "Creating symlink to $folder in \"~\"."
     ln -s $dir/$folder ~/
