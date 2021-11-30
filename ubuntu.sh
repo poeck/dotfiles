@@ -7,7 +7,7 @@ sudo apt-get update -y
 sudo apt-get install neovim -y
 sudo apt install git -y
 sudo apt install snapd -y
-sudo snap install alacritty --classic -y
+sudo snap install alacritty --classic 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 sudo apt install tmux -y
