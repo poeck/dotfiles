@@ -11,7 +11,7 @@ My personal Dotfiles, including:
 
 ## Example
 
-![alt example](https://github.com/paulkoeckdev/DotFiles/blob/main/example.png?raw=true)
+![Example](https://github.com/paulkoeckdev/DotFiles/blob/main/example.png?raw=true)
 
 ## Installation
 
