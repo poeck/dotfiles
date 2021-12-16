@@ -1,0 +1,3 @@
+pane	0	1	1	:*	1	:/home/paul	1	nvim	:nvim .tmux.conf
+window	0	1	:nvim	1	:*	c3bd,192x55,0,0,0	:
+state	0	
