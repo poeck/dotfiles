@@ -1,0 +1,1 @@
+/home/paul/.local/share/omf/themes/zeit/fish_prompt.fish

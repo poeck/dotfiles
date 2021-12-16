@@ -5,3 +5,5 @@ alias vim=nvim
 alias svim=sudoedit
 
 set -Ux EDITOR nvim 
+
+bind \cw backward-kill-word
