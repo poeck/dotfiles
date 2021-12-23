@@ -11,10 +11,6 @@ let g:neoterm_autoscroll=1
 " Auto open in new tab
 let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
 
-" Set html indent
-let g:user_emmet_leader_key='<C-y>'
-" Fix Tab
-let g:user_emmet_expandabbr_key='<Tab>'
 let g:user_emmet_settings = {
     \    'html' : {
     \        'indentation' : '  '

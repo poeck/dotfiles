@@ -73,7 +73,6 @@ tnoremap <Esc> <C-\><C-n>
 " Insert
 inoremap jk <ESC>
 inoremap <c-s> <Esc>:w<CR>a
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " Visual
 vnoremap <S-h> 0
