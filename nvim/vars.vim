@@ -10,6 +10,7 @@ let g:neoterm_autoscroll=1
 
 " Auto open in new tab
 let g:NERDTreeCustomOpenArgs={'file':{'where': 't'}}
+let NERDTreeShowHidden=1
 
 let g:user_emmet_settings = {
     \    'html' : {
