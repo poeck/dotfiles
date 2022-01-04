@@ -6,7 +6,7 @@ set ic
 set relativenumber
 set expandtab
 set smarttab
-set autoindent
+set smartindent
 set cindent
 set modifiable
 set noshowmode

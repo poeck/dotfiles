@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'roryokane/detectindent'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -35,5 +34,7 @@ Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/gruvbox-material'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
