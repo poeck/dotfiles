@@ -9,6 +9,7 @@ let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
 
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
 
 let g:user_emmet_settings = {
     \    'html' : {
@@ -32,7 +33,7 @@ let g:coc_global_extensions = [
 
 " Status bar
 let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

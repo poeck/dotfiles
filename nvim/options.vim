@@ -17,7 +17,4 @@ set softtabstop=4
 set shiftwidth=4
 set tabstop=4
 set background=dark
-
-if has('termguicolors')
-   set termguicolors
-endif
+set termguicolors

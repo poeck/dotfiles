@@ -3,7 +3,7 @@
 "------------------
 
 filetype plugin indent on
-colorscheme onehalfdark 
+colorscheme one 
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command Reload :source $MYVIMRC

@@ -12,6 +12,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kassio/neoterm'
 Plug 'mattn/emmet-vim'
@@ -34,6 +35,9 @@ Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/gruvbox-material'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-one'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

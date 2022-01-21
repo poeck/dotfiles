@@ -1,0 +1,13 @@
+pane	0	1	1	:*	1	:/home/paul/projects/foxfunding/api	0	nvim	:nvim
+pane	0	1	1	:*	2	:/home/paul/projects/foxfunding/api	0	npm	:npm run tsc:watch
+pane	0	1	1	:*	3	:/home/paul/projects/foxfunding/api	1	fish	:
+pane	0	1	1	:*	4	:/home/paul/projects/foxfunding/api	0	node	:node /usr/local/bin/prisma studio
+pane	0	2	0	:#-	1	:/home/paul/projects/foxfunding/web	1	nvim	:nvim
+pane	0	2	0	:#-	2	:/home/paul/projects/foxfunding/web	0	npm	:npm run dev
+pane	2	1	1	:*	1	:/home/paul	1	ssh	:ssh alex@traderedge.app
+pane	3	1	1	:*	1	:/home/paul	1	fish	:
+window	0	1	:fish	1	:*	b446,192x53,0,0[192x30,0,0,0,192x22,0,31{65x22,0,31,1,62x22,66,31,2,63x22,129,31,5}]	:
+window	0	2	:nvim	0	:#-	0c40,192x53,0,0[192x46,0,0,3,192x6,0,47,4]	:
+window	2	1	:ssh	1	:*	5e0f,192x53,0,0,10	:
+window	3	1	:fish	1	:*	5e10,192x53,0,0,11	:
+state	2	
