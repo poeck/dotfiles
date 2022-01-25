@@ -33,7 +33,7 @@ let g:coc_global_extensions = [
 
 " Status bar
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'monokai_pro',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

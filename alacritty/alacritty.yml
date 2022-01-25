@@ -3,7 +3,7 @@ schemes:
 # {{{ Gruvbox Material Dark
   gruvbox_material_dark: &gruvbox_material_dark
     primary:
-      background: '#282828'
+      background: '#2d2a2e'
       foreground: '#d4be98'
 
     normal:
@@ -390,7 +390,31 @@ schemes:
       cyan: '0x56b6c2'
       white: '0xdcdfe4'
 # }}}
-colors: *onehalf
+# {{{ Monokai Pro 
+  monokai_pro: &monokai_pro
+    primary:
+      background: '0x2d2a2e'
+      foreground: '0xfff1f3'
+    normal  :
+      black:   '0x2c2525'
+      red:     '0xfd6883'
+      green:   '0xadda78'
+      yellow:  '0xf9cc6c'
+      blue:    '0xf38d70'
+      magenta: '0xa8a9eb'
+      cyan:    '0x85dacc'
+      white:   '0xfff1f3'
+    bright:
+      black:   '0x72696a'
+      red:     '0xfd6883'
+      green:   '0xadda78'
+      yellow:  '0xf9cc6c'
+      blue:    '0xf38d70'
+      magenta: '0xa8a9eb'
+      cyan:    '0x85dacc'
+      white:   '0xfff1f3'
+# }}}
+colors: *monokai_pro
 draw_bold_text_with_bright_colors: true
 window:
   decorations: None 
@@ -407,15 +431,6 @@ scrolling:
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: false 
 font:
-  # normal:
-  #   family: Droid Sans Mono NF 
-  #   style: Regular
-  # bold:
-  #   family: Droid Sans Mono NF 
-  #   style: Bold
-  # italic:
-  #   family: Droid Sans Mono NF 
-  #   style: Italic
   normal:
     family: JetBrainsMono Nerd Font Mono 
     style: Regular
@@ -441,8 +456,6 @@ cursor:
   style: Beam 
   unfocused_hollow: true
 live_config_reload: true
-env:
-  TERM: xterm-256color
 shell:
   program: /bin/fish
   args:

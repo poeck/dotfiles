@@ -3,7 +3,7 @@
 "------------------
 
 filetype plugin indent on
-colorscheme one 
+colorscheme monokai_pro 
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command Reload :source $MYVIMRC
