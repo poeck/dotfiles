@@ -414,7 +414,7 @@ schemes:
       cyan:    '0x85dacc'
       white:   '0xfff1f3'
 # }}}
-colors: *monokai_pro
+colors: *gruvbox_mix_dark
 draw_bold_text_with_bright_colors: true
 window:
   decorations: None 
