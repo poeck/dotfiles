@@ -18,5 +18,4 @@ sudo chsh -s `which fish`
 fish
 omf install zeit
 curl -sLf https://raw.githubusercontent.com/poeck/Dotfiles/main/install.sh | bash
-
 chsh -s `which fish`
