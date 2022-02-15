@@ -65,12 +65,6 @@ nnoremap <silent> <leader>8 :BufferGoto 8<CR>
 nnoremap <silent> <leader>9 :BufferLast<CR>
 nnoremap <silent> <leader><left> :BufferMovePrevious<CR>
 nnoremap <silent> <leader><right> :BufferMoveNext<CR>
-nmap <leader>s <plug>(SubversiveSubstituteRange)
-xmap <leader>s <plug>(SubversiveSubstituteRange)
-nmap <leader>ss <plug>(SubversiveSubstituteWordRange)
-nnoremap s <plug>(SubversiveSubstitute)
-nnoremap ss <plug>(SubversiveSubstituteLine)
-nnoremap S <plug>(SubversiveSubstituteToEndOfLine)
 
 " Terminal
 tnoremap jk <C-\><C-n>
