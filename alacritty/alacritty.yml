@@ -418,7 +418,7 @@ colors: *gruvbox_mix_dark
 draw_bold_text_with_bright_colors: true
 window:
   decorations: None 
-  startup_mode: Fullscreen 
+  # startup_mode: Fullscreen 
 scrolling:
   history: 10000
   multiplier: 3
