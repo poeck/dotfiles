@@ -1,0 +1,49 @@
+general {
+        colors = true
+        color_good = "#98971a"
+        color_bad = "#cc241d"
+        color_degraded = "#fabd2f"
+        interval = 2
+}
+
+order += "cpu_usage"
+order += "disk /"
+order += "tztime local"
+
+volume master {
+        #format = "♪%volume" 
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+        # termsyn font
+        format = "🔊 %volume"
+}
+
+load {
+#       format = " Δ: %1min "
+        format = "%1min"
+}
+
+cpu_usage {
+        format = "%usage CPU"
+}
+
+disk "/" {
+        format = "%avail:/"
+}
+
+wireless wlan0 {
+        format_up = " W: (%quality at %essid) %ip "
+        format_down = " ☡ WiFi "
+}
+
+ethernet enp3s0 {
+        # termsyn font
+        format_up =  "%ip"
+        format_down = "eth0 "
+}
+
+tztime local {
+        # termsyn font
+        format = "%h-%d %H:%M"
+}

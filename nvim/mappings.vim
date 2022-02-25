@@ -73,6 +73,7 @@ tnoremap <Esc> <C-\><C-n>
 " Insert
 inoremap jk <ESC>
 inoremap <c-s> <Esc>:w<CR>a
+inoremap <expr> <CR> Expander()
 
 " Visual
 vnoremap <S-h> 0

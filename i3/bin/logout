@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Manage logout with rofi
+option=`echo -e "Suspend\nLogout\nReboot\nPower Off" | rofi -width 400 -dmenu -p -i system:`
+case $option in
+    Suspend)
+        systemctl suspend
+        ;;
+    Logout)
+        i3 exit
+        ;;
+    Reboot)
+        reboot
+        ;;
+    "Power Off")
+        poweroff
+        ;;
+esac
