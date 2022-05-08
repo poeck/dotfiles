@@ -10,6 +10,7 @@ exec_always --no-startup-id xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97
 exec_always --no-startup-id xrandr --output DP-3 --right-of HDMI-0
 exec_always --no-startup-id feh --bg-scale ~/Wallpapers/Monterey.jpg
 exec_always --no-startup-id xinput --set-prop 9 302 -0.7
+exec_always --no-startup-id /usr/lib/gsd-xsettings
 
 #keybinds 
 bindsym Ctrl+Insert exec playerctl play-pause 
@@ -17,6 +18,7 @@ bindsym Ctrl+Prior exec playerctl next
 bindsym Ctrl+Next exec playerctl previous 
 
 client.focused #ebdbb2 #ebdbb2 #ebdbb2 #ebdbb2    #ebdbb2 
+focus_follows_mouse no
 for_window [class="^.*"] border pixel 0
 
 set $mod Mod1
@@ -57,7 +59,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+Shift+m move workspace to output left
-bindsym $mod+m move workspace to output left
+bindsym $mod+Shift+s move workspace to output left
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
