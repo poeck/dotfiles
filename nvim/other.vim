@@ -5,9 +5,12 @@
 filetype plugin indent on
 colorscheme gruvbox 
 
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command Reload :source $MYVIMRC
-command! Tw :silent exec "!rustywind --write ."
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Detect Indentation
 augroup DetectIndent

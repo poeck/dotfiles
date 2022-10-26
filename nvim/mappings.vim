@@ -4,8 +4,14 @@
 
 " Set leader
 let mapleader = "\<Space>"
+let mapleader = "\<Space>"
+let mapleader = "\<Space>"
+let mapleader = "\<Space>"
+let mapleader = "\<Space>"
+let mapleader = "\<Space>"
 
 " Any mode
+noremap gf :edit <cfile><cr> 
 noremap <S-s> /
 noremap <leader>m :
 noremap <leader>o :ex ~/
@@ -33,7 +39,9 @@ nnoremap <S-k> <PageUp>
 nnoremap <S-h> 0
 nnoremap <S-l> $
 nnoremap <silent> <leader><space> <cmd>Telescope find_files<CR>
-nnoremap <silent> <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <silent> <leader>rr :Reload<CR>
+nnoremap <silent> <leader>fr :Farr<CR>
+nnoremap <silent> <leader>ff :Rg<CR>
 nnoremap <silent> <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <silent> <leader>fj <cmd>Telescope buffers<CR>
@@ -42,6 +50,8 @@ nnoremap <silent> <leader>gg :G<CR>
 nnoremap <silent> <leader>gc :G commit<CR>
 nnoremap <silent> <leader>ga :G add .<CR>
 nnoremap <silent> <leader>gp :G push<CR>
+nnoremap <silent> <leader>y :!xdg-open %<CR><CR>
+nnoremap <silent> <leader>x :!xdg-open .<CR><CR>
 nnoremap <silent> <leader>fl :NERDTreeTabsToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> <S-h> :call CocAction('doHover')<CR>
@@ -72,10 +82,16 @@ tnoremap <Esc> <C-\><C-n>
 
 " Insert
 inoremap jk <ESC>
+inoremap ;; <ESC>A;<Esc>
+inoremap ,, <ESC>A,<Esc>
 inoremap <c-s> <Esc>:w<CR>a
 inoremap <expr> <CR> Expander()
 
 " Visual
 vnoremap <S-h> 0
 vnoremap <S-l> $
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
+tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"

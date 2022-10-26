@@ -3,10 +3,12 @@
 "------------------
 
 " Global
-let g:rg_command = 'rg --vimgrep -S'
 let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
+
+let g:blamer_delay = 2000
+let g:blamer_enabled = 1
 
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
@@ -52,7 +54,7 @@ let bufferline = get(g:, 'bufferline', {})
 let bufferline.icons = 'both'
 let bufferline.maximum_length = 20
 
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
+let g:far#enable_undo=1
+let g:far#source  = 'rg'
+let g:far#ignore_files = [ '~/.config/nvim/.farignore' ]
+let g:far#mode_open = { "regex": 0, "case_sensitive": 1, "word": 0, "substitute": 0 }
