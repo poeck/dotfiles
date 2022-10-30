@@ -45,5 +45,7 @@ Plug 'mikemjharris/vim-styled-jsx'
 Plug 'APZelos/blamer.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ThePrimeagen/vim-be-good'
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()
