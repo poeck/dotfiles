@@ -47,5 +47,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'wakatime/vim-wakatime'
+Plug 'Equilibris/nx.nvim'
+
 
 call plug#end()
