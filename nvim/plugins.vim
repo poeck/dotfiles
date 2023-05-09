@@ -48,6 +48,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'wakatime/vim-wakatime'
 Plug 'Equilibris/nx.nvim'
-
+Plug 'github/copilot.vim'
 
 call plug#end()
