@@ -18,12 +18,13 @@ noremap <leader>o :ex ~/
 noremap <silent> <C-c> :noh<CR>
 noremap <silent> <S-q> :qa!<CR>
 noremap <silent> <leader>d :BufferClose<CR>
-noremap <silent> <leader>s :w<CR>
+noremap <silent> <leader>s :silent write<CR>
 noremap <silent> <leader>a <kDivide>
 noremap <silent> <leader>t :call Term()<CR>
 noremap <silent> <leader>ca :call CloseAllButCurrent()<CR>
 
 " Normal Mode
+nnoremap u :silent undo<CR>
 nnoremap <leader>h <C-W>h
 nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
@@ -75,10 +76,6 @@ nnoremap <silent> <leader>8 :BufferGoto 8<CR>
 nnoremap <silent> <leader>9 :BufferLast<CR>
 nnoremap <silent> <leader><left> :BufferMovePrevious<CR>
 nnoremap <silent> <leader><right> :BufferMoveNext<CR>
-
-" Terminal
-tnoremap jk <C-\><C-n>
-tnoremap <Esc> <C-\><C-n>
 
 " Insert
 inoremap jk <ESC>

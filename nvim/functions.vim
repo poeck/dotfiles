@@ -9,14 +9,6 @@ function! CloseAllButCurrent()
   if curr < last | silent! execute (curr+1).",".last."bd" | endif
 endfunction
 
-" Open a new terminal in cwd
-function! Term()
-    let cwd = getcwd()
-    execute 'Tnew'
-    execute 'T cd' cwd
-    execute 'T clear'
-endfunction
-
 function! DeleteInactiveBufs()
     let tablist = []
     for i in range(tabpagenr('$'))

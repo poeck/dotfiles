@@ -3,12 +3,11 @@
 "------------------
 
 filetype plugin indent on
-colorscheme gruvbox 
+colorscheme gruvbox-material
 
 au BufNewFile,BufRead *.ejs set filetype=html
 
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, <bang>0)
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 command Reload :source $MYVIMRC
 
@@ -47,3 +46,16 @@ require('telescope').setup{
     }
   },
 }
+
+
+require('template-string').setup({ filetypes = { 'html', 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue', 'svelte', 'python' },
+  jsx_brackets = true,
+  remove_template_string = true,
+  restore_quotes = {
+    normal = [["]],
+    jsx = [["]],
+  },
+})
+
+require('lualine').setup()
+require("noice").setup()

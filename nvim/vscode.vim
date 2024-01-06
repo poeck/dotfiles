@@ -18,11 +18,6 @@ nnoremap <leader>wh :call VSCodeNotify('workbench.action.splitEditorDown')<CR>
 nnoremap <leader>wq :call VSCodeNotify('workbench.action.closeEditorsAndGroup')<CR>
 nnoremap <leader>d :call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 
-" Terminal
-nnoremap <leader>tt  :call VSCodeNotify('workbench.action.togglePanel')<CR>
-nnoremap <leader>tf  :call VSCodeNotify('terminal.focus')<CR>
-nnoremap <leader>tn  :call VSCodeNotify('workbench.action.terminal.new')<CR>
-
 " Tabs
 nnoremap <leader>1  :call VSCodeNotify('workbench.action.openEditorAtIndex1')<CR>
 nnoremap <leader>2  :call VSCodeNotify('workbench.action.openEditorAtIndex2')<CR>
