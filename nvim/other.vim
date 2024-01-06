@@ -58,4 +58,3 @@ require('template-string').setup({ filetypes = { 'html', 'typescript', 'javascri
 })
 
 require('lualine').setup()
-require("noice").setup()

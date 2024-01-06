@@ -24,7 +24,6 @@ noremap <silent> <leader>t :call Term()<CR>
 noremap <silent> <leader>ca :call CloseAllButCurrent()<CR>
 
 " Normal Mode
-nnoremap u :silent undo<CR>
 nnoremap <leader>h <C-W>h
 nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
@@ -52,7 +51,7 @@ nnoremap <silent> <leader>gc :G commit<CR>
 nnoremap <silent> <leader>ga :G add .<CR>
 nnoremap <silent> <leader>gp :G push<CR>
 nnoremap <silent> <leader>y :!xdg-open %<CR><CR>
-nnoremap <silent> <leader>x :!xdg-open .<CR><CR>
+nnoremap <silent> <leader>x :!xdg-open %:h<CR><CR>
 nnoremap <silent> <leader>fl :NERDTreeTabsToggle<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> <S-h> :call CocAction('doHover')<CR>
