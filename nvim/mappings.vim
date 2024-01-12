@@ -83,6 +83,9 @@ inoremap ,, <ESC>A,<Esc>
 inoremap <c-s> <Esc>:w<CR>a
 inoremap <expr> <CR> Expander()
 
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " Visual
 vnoremap <S-h> 0
 vnoremap <S-l> $
