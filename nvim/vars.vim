@@ -7,7 +7,7 @@ let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
 
-let g:user_emmet_expandabbr_key='<Tab>'
+let g:user_emmet_expandabbr_key='<C-e>'
 
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1

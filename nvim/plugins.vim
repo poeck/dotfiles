@@ -36,6 +36,5 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-system-copy'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'axelvc/template-string.nvim'
 
 call plug#end()

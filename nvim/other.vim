@@ -13,6 +13,9 @@ command Reload :source $MYVIMRC
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+autocmd FileType html,typescript,javascript,typescriptreact,javascriptreact 
+   \ autocmd InsertCharPre * lua require('template-string').update()
+
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
   \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
@@ -47,14 +50,5 @@ require('telescope').setup{
   },
 }
 
-
-require('template-string').setup({ filetypes = { 'html', 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue', 'svelte', 'python' },
-  jsx_brackets = true,
-  remove_template_string = true,
-  restore_quotes = {
-    normal = [["]],
-    jsx = [["]],
-  },
-})
 
 require('lualine').setup()
