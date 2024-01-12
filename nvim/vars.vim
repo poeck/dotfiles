@@ -9,6 +9,8 @@ let g:neoterm_autoscroll=1
 
 let g:user_emmet_expandabbr_key='<C-e>'
 
+let g:system_copy_silent = 1
+
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 

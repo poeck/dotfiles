@@ -26,7 +26,11 @@ TemplateString.update = function()
             if start_quote_pos and end_quote_pos then
                 local filetype = vim.bo.filetype
 
-                if (filetype == 'typescriptreact' or filetype == 'javascriptreact') and not (line:sub(start_quote_pos - 1, start_quote_pos - 1) == '{' and line:sub(end_quote_pos + 1, end_quote_pos + 1) == '}') then
+                if
+                    (filetype == 'typescriptreact' or filetype == 'javascriptreact')
+                    and line:sub(start_quote_pos - 1, start_quote_pos - 1) == '='
+                    and not (line:sub(start_quote_pos - 1, start_quote_pos - 1) == '{' and line:sub(end_quote_pos + 1, end_quote_pos + 1) == '}')
+                then
                     local new_line = line:sub(1, start_quote_pos - 1) .. '{`' .. line:sub(start_quote_pos + 1, end_quote_pos - 1) .. '`}' .. line:sub(end_quote_pos + 1)
 
                     vim.api.nvim_set_current_line(new_line)
