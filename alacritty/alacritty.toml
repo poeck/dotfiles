@@ -1,0 +1,71 @@
+live_config_reload = true
+
+[colors.bright]
+black = "#504945"
+blue = "#80aa9e"
+cyan = "#8bba7f"
+green = "#b0b846"
+magenta = "#d3869b"
+red = "#f2594b"
+white = "#e2cca9"
+yellow = "#e9b143"
+
+[colors.normal]
+black = "#504945"
+blue = "#80aa9e"
+cyan = "#8bba7f"
+green = "#b0b846"
+magenta = "#d3869b"
+red = "#f2594b"
+white = "#e2cca9"
+yellow = "#e9b143"
+
+[colors.primary]
+background = "#282828"
+foreground = "#e2cca9"
+
+[cursor]
+style = "Beam"
+unfocused_hollow = true
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "Return"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+args = ["--command=\"tmux\""]
+program = "/bin/fish"
+
+[window]
+startup_mode = "Maximized"
