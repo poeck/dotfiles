@@ -27,6 +27,7 @@ set updatetime=300
 set timeoutlen=1000
 set ttimeoutlen=0
 set ignorecase smartcase
+set mouse=
 
 if exists('$TMUX')
     let &t_8f = "<Esc>[38;2;%lu;%lu;%lum"
