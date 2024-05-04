@@ -11,9 +11,6 @@ let g:user_emmet_expandabbr_key='<C-e>'
 
 let g:system_copy_silent = 1
 
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
-
 " let g:gruvbox_material_background='soft'
 " let g:gruvbox_material_foreground='mix'
 

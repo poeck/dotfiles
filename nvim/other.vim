@@ -35,13 +35,28 @@ augroup END
 
 lua << EOF
 require('telescope').setup{
- pickers = {
+   pickers = {
     find_files = {
-        hidden = true
-    }
+      find_command = {
+        "rg",
+        "--no-ignore",
+        "--hidden",
+        "--files",
+        "-g",
+        "!**/node_modules/*",
+        "-g",
+        "!**/.git/*",
+      },
+    },
+  },
+  extensions = {
+    file_browser = {
+      hidden = { file_browser = true, folder_browser = true },
+      prompt_path = true,
+    },
   },
  defaults = {
-    file_ignore_patterns = {"node_modules", ".git"},
+    file_ignore_patterns = {"node_modules", ".git", "dist", "out", ".next", ".nx"},
     mappings = {
       i = {
         ["<Esc>"] = "close"
@@ -51,4 +66,19 @@ require('telescope').setup{
 }
 
 
-require('lualine').setup()
+require("oil").setup({
+  default_file_explorer = true,
+  columns = {
+    "size",
+    "icon",
+  },
+  delete_to_trash = true,
+  skip_confirm_for_simple_edits = true,
+  prompt_save_on_select_new_entry = false,
+  keymaps = {
+     ["t"] = "actions.parent",
+  },
+  view_options = {
+    show_hidden = true,
+  }
+})

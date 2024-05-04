@@ -6,9 +6,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'roryokane/detectindent'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -36,5 +33,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-system-copy'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'stevearc/oil.nvim'
 
 call plug#end()
