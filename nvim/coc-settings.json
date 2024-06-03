@@ -1,16 +1,6 @@
 {
   "suggest.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "css",
-    "markdown",
-    "html",
-    "json",
-    "javascriptreact",
-    "typescript.tsx",
-    "dart"
-  ],
-  "tsserver.formatOnType": true
+  "coc.preferences.formatOnSave": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "eslint.autoFixOnSave": true
 }

@@ -47,7 +47,7 @@ nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
 nnoremap <silent> <leader>fj <cmd>Telescope buffers<CR>
 nnoremap <silent> <leader>fk <cmd>Telescope file_browser<CR>
 nnoremap <silent> <leader>gg :G<CR>
-nnoremap <silent> <leader>gc :G commit<CR>
+nnoremap <silent> <leader>gc :Telescope conventional_commits<CR>
 nnoremap <silent> <leader>ga :G add .<CR>
 nnoremap <silent> <leader>gp :G push<CR>
 nnoremap <silent> <leader>y :!xdg-open %<CR><CR>

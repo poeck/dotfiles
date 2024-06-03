@@ -34,5 +34,6 @@ Plug 'christoomey/vim-system-copy'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'stevearc/oil.nvim'
+Plug 'olacin/telescope-cc.nvim'
 
 call plug#end()

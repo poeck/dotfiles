@@ -12,6 +12,7 @@ set cindent
 set modifiable
 set noshowmode
 set notimeout
+set nowritebackup
 set hidden
 set list
 set listchars=tab:▸\ ,trail:·

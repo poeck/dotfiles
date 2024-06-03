@@ -56,7 +56,7 @@ require('telescope').setup{
     },
   },
  defaults = {
-    file_ignore_patterns = {"node_modules", ".git", "dist", "out", ".next", ".nx"},
+    file_ignore_patterns = {"node_modules/", ".git/", "dist/", ".next/", ".nx/"},
     mappings = {
       i = {
         ["<Esc>"] = "close"
