@@ -1,0 +1,87 @@
+[
+  {
+    "bindings": {
+      "space space": "file_finder::Toggle"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-t": "terminal_panel::ToggleFocus",
+      "ctrl-f": "workspace::ToggleZoom"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "I": "editor::Hover",
+      "H": "vim::StartOfLine",
+      "J": "vim::ScrollDown",
+      "K": "vim::ScrollUp",
+      "L": "vim::EndOfLine",
+      "space s": "workspace::Save",
+      "space d": "pane::CloseActiveItem",
+      "space 1": ["pane::ActivateItem", 0],
+      "space 2": ["pane::ActivateItem", 1],
+      "space 3": ["pane::ActivateItem", 2],
+      "space 4": ["pane::ActivateItem", 3],
+      "space 5": ["pane::ActivateItem", 4],
+      "space 6": ["pane::ActivateItem", 5],
+      "space 7": ["pane::ActivateItem", 6],
+      "space 8": ["pane::ActivateItem", 7],
+      "space 9": ["pane::ActivateItem", 8],
+      "space w q": "pane::CloseAllItems",
+      "space h": ["workspace::ActivatePaneInDirection", "Left"],
+      "space j": ["workspace::ActivatePaneInDirection", "Down"],
+      "space k": ["workspace::ActivatePaneInDirection", "Up"],
+      "space l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space 0": "pane::ActivateLastItem",
+      "space b a": "pane::CloseInactiveItems",
+      "space w v": "pane::SplitRight",
+      "space w h": "pane::SplitDown",
+      "space f f": "project_search::ToggleFocus",
+      "space f l": "workspace::ToggleLeftDock",
+      "space f q": "workspace::ToggleLeftDock",
+      "space x": "editor::RevealInFileManager",
+      "ctrl-c": "editor::Cancel"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "H": "project_panel::CollapseAllEntries",
+      "c": "project_panel::Duplicate",
+      "d": "project_panel::Trash",
+      "n": "project_panel::NewFile",
+      "r": "project_panel::Rename",
+      "x": "project_panel::RevealInFileManager",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "s": "project_panel::NewSearchInDirectory",
+      "space l": "workspace::ToggleLeftDock",
+      "space d": "workspace::ToggleLeftDock",
+      "space w q": "workspace::ToggleLeftDock",
+      "space f l": "workspace::ToggleLeftDock",
+      "enter": ["workspace::SendKeystrokes", "f space f l"],
+      "f": "project_panel::Open"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space c p": "editor::Copy",
+      "c p": ["workspace::SendKeystrokes", "space c p escape"],
+      "s": [
+        "editor::SelectNext",
+        {
+          "replace_newest": false
+        }
+      ]
+    }
+  }
+]

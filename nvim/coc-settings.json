@@ -2,5 +2,6 @@
   "suggest.noselect": false,
   "coc.preferences.formatOnSave": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
+  "prettier.disableLanguages": ["handlebars"],
   "eslint.autoFixOnSave": true
 }
