@@ -12,14 +12,12 @@ let mapleader = "\<Space>"
 
 " Any mode
 noremap gf :edit <cfile><cr> 
-noremap <S-s> /
 noremap <leader>m :
 noremap <leader>o :ex ~/
 noremap <silent> <C-c> :noh<CR>
 noremap <silent> <S-q> :qa!<CR>
 noremap <silent> <leader>d :BufferClose<CR>
 noremap <silent> <leader>s :silent write<CR>
-noremap <silent> <leader>a <kDivide>
 noremap <silent> <leader>t :call Term()<CR>
 noremap <silent> <leader>ca :call CloseAllButCurrent()<CR>
 
@@ -34,10 +32,7 @@ nnoremap <leader>ws :split<CR>
 nnoremap <leader>wd :close<CR> 
 nnoremap <leader>wc :close<CR> 
 nnoremap <leader>wq :close<CR> 
-nnoremap <S-j> <PageDown>
-nnoremap <S-k> <PageUp>
-nnoremap <S-h> 0
-nnoremap <S-l> $
+nnoremap <leader>rn <Plug>(coc-rename)
 nnoremap <silent> <leader><space> <cmd>Telescope find_files<CR>
 nnoremap <silent> <leader>rr :Reload<CR>
 nnoremap <silent> <leader>fr :Farr<CR>
@@ -54,8 +49,7 @@ nnoremap <silent> <leader>y :!xdg-open %<CR><CR>
 nnoremap <silent> <leader>x :!xdg-open %:h<CR><CR>
 nnoremap <silent> <leader>fl :Oil --float<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
-nnoremap <silent> <S-h> :call CocAction('doHover')<CR>
-nnoremap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <silent> <S-k> :call CocAction('doHover')<CR>
 nnoremap <silent> <leader>bf <cmd>Telescope buffers<CR>
 nnoremap <silent> <leader>bb <cmd>Telescope buffers<CR>
 nnoremap <silent> <leader>bd :BufferClose<CR>
@@ -78,10 +72,8 @@ nnoremap <silent> <leader><right> :BufferMoveNext<CR>
 
 " Insert
 inoremap jk <ESC>
-inoremap ;; <ESC>A;<Esc>
-inoremap ,, <ESC>A,<Esc>
 inoremap <c-s> <Esc>:w<CR>a
-inoremap <silent> <expr> <C-w> coc#pum#confirm()
+
 
 " Visual
 vnoremap <S-h> 0
@@ -91,3 +83,32 @@ vnoremap <S-Tab> <gv
 
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 tnoremap <expr> jk (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+
+inoremap <silent><expr> <c-x> coc#refresh()
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+nmap <leader>ac  <Plug>(coc-codeaction-cursor)
+nmap <leader>as  <Plug>(coc-codeaction-source)
+nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
