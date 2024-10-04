@@ -82,3 +82,15 @@ require("oil").setup({
     show_hidden = true,
   }
 })
+
+require("supermaven-nvim").setup({
+  keymaps = {
+    accept_suggestion = "<F13>",
+    clear_suggestion = "<C-]>",
+    accept_word = "<C-j>",
+  },
+  log_level = "off",
+})
+
+
+require("tailwind-tools").setup({})

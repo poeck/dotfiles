@@ -14,7 +14,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'romgrk/barbar.nvim'
-Plug 'vimsence/vimsence'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -27,7 +26,6 @@ Plug 'pantharshit00/vim-prisma'
 Plug 'sainnhe/gruvbox-material'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wakatime/vim-wakatime'
-Plug 'github/copilot.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-system-copy'
@@ -35,5 +33,8 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'stevearc/oil.nvim'
 Plug 'olacin/telescope-cc.nvim'
+Plug 'supermaven-inc/supermaven-nvim'
+Plug 'luckasRanarison/tailwind-tools.nvim'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
