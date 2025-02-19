@@ -91,6 +91,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+nmap <silent> gj <Plug>(GitGutterNextHunk)
+nmap <silent> gk <Plug>(GitGutterPrevHunk)
+
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

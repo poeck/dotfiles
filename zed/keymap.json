@@ -1,11 +1,6 @@
 [
   {
     "bindings": {
-      "space space": "file_finder::Toggle"
-    }
-  },
-  {
-    "bindings": {
       "ctrl-t": "terminal_panel::ToggleFocus",
       "ctrl-f": "workspace::ToggleZoom"
     }
@@ -13,17 +8,13 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": "vim::NormalBefore"
+      "j k": ["vim::SwitchMode", "Normal"]
     }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "I": "editor::Hover",
-      "H": "vim::StartOfLine",
-      "J": "vim::ScrollDown",
-      "K": "vim::ScrollUp",
-      "L": "vim::EndOfLine",
+      "space space": "file_finder::Toggle",
       "space s": "workspace::Save",
       "space d": "pane::CloseActiveItem",
       "space 1": ["pane::ActivateItem", 0],
@@ -45,16 +36,16 @@
       "space w v": "pane::SplitRight",
       "space w h": "pane::SplitDown",
       "space f f": "project_search::ToggleFocus",
-      "space f l": "workspace::ToggleLeftDock",
+      "space f l": "pane::RevealInProjectPanel",
       "space f q": "workspace::ToggleLeftDock",
       "space x": "editor::RevealInFileManager",
-      "ctrl-c": "editor::Cancel"
+      "space f a": "workspace::ToggleRightDock"
     }
   },
   {
-    "context": "ProjectPanel",
+    "context": "ProjectPanel && !renaming && not_editing",
     "bindings": {
-      "H": "project_panel::CollapseAllEntries",
+      "shift-h": "project_panel::CollapseAllEntries",
       "c": "project_panel::Duplicate",
       "d": "project_panel::Trash",
       "n": "project_panel::NewFile",
@@ -82,6 +73,13 @@
           "replace_newest": false
         }
       ]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-n": "workspace::NewTerminal",
+      "ctrl-x": "pane::CloseActiveItem"
     }
   }
 ]

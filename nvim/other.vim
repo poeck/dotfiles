@@ -75,6 +75,12 @@ require("oil").setup({
   delete_to_trash = true,
   skip_confirm_for_simple_edits = true,
   prompt_save_on_select_new_entry = false,
+  lsp_file_methods = {
+    enabled = true,
+    timeout_ms = 1000,
+    autosave_changes = true,
+  },
+  watch_for_changes = true,
   keymaps = {
      ["t"] = "actions.parent",
   },
@@ -94,3 +100,15 @@ require("supermaven-nvim").setup({
 
 
 require("tailwind-tools").setup({})
+
+require('gitsigns').setup()
+
+require('nvim-ts-autotag').setup({
+  opts = {
+    enable_close = true,
+    enable_rename = true,
+    enable_close_on_slash = true
+  },
+})
+
+require('mini.move').setup()
