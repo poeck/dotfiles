@@ -3,5 +3,8 @@
   "coc.preferences.formatOnSave": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "prettier.disableLanguages": ["handlebars"],
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "snippets.ultisnips.pythonPrompt": false,
+  "tsserver.enable": true,
+  "tsserver.tsdk": "./node_modules/typescript/lib"
 }

@@ -22,7 +22,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'pantharshit00/vim-prisma'
 Plug 'sainnhe/gruvbox-material'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'wakatime/vim-wakatime'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-system-copy'
@@ -37,5 +36,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'echasnovski/mini.move'
 Plug 'simeng/vim-imba'
+Plug 'augmentcode/augment.vim'
+Plug 'lambdalisue/vim-suda'
 
 call plug#end()

@@ -91,15 +91,12 @@ require("oil").setup({
 
 require("supermaven-nvim").setup({
   keymaps = {
-    accept_suggestion = "<F13>",
+    accept_suggestion = "<S-F3>",
     clear_suggestion = "<C-]>",
     accept_word = "<C-j>",
   },
   log_level = "off",
 })
-
-
-require("tailwind-tools").setup({})
 
 require('gitsigns').setup()
 
@@ -110,5 +107,4 @@ require('nvim-ts-autotag').setup({
     enable_close_on_slash = true
   },
 })
-
 require('mini.move').setup()

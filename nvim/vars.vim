@@ -7,7 +7,7 @@ let g:neoterm_autoinsert=0
 let g:neoterm_autojump=1
 let g:neoterm_autoscroll=1
 
-let g:user_emmet_expandabbr_key='<F14>'
+let g:user_emmet_expandabbr_key='<S-F4>'
 
 let g:system_copy_silent = 1
 
@@ -41,3 +41,8 @@ let g:far#ignore_files = [ '~/.config/nvim/.farignore' ]
 let g:far#mode_open = { "regex": 0, "case_sensitive": 1, "word": 0, "substitute": 0 }
 
 let g:fzf_vim = {}
+
+let g:augment_workspace_folders = ["~/dev/otark"]
+
+let g:system_copy#copy_command='xclip -sel clipboard'
+let g:system_copy#paste_command='xclip -sel clipboard -o'

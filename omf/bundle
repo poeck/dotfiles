@@ -1,2 +1,7 @@
+package bass
+theme agnoster
+theme batman
 theme default
+theme one
+theme pie
 theme zeit
