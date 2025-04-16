@@ -23,3 +23,14 @@ function transfer --description 'Easy file sharing from the command line using h
     cat $tmpfile; 
     rm -f $tmpfile;
 end
+
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+
+# pnpm
+set -gx PNPM_HOME "/home/paul/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

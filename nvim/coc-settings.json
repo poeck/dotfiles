@@ -6,5 +6,8 @@
   "eslint.autoFixOnSave": true,
   "snippets.ultisnips.pythonPrompt": false,
   "tsserver.enable": true,
-  "tsserver.tsdk": "./node_modules/typescript/lib"
+  "tsserver.tsdk": "./node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
