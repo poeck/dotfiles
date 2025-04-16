@@ -49,12 +49,6 @@ require('telescope').setup{
       },
     },
   },
-  extensions = {
-    file_browser = {
-      hidden = { file_browser = true, folder_browser = true },
-      prompt_path = true,
-    },
-  },
  defaults = {
     file_ignore_patterns = {"node_modules/", ".git/", "dist/", ".next/", ".nx/"},
     mappings = {
@@ -108,3 +102,5 @@ require('nvim-ts-autotag').setup({
   },
 })
 require('mini.move').setup()
+
+require("tailwind-tools").setup({})
