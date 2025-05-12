@@ -28,6 +28,9 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+alias code="~/apps/cursor"
+alias cursor="~/apps/cursor"
+
 # pnpm
 set -gx PNPM_HOME "/home/paul/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH

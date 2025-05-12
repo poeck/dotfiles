@@ -67,7 +67,7 @@ args = ["--command=\"tmux\""]
 program = "/bin/fish"
 
 [window]
-startup_mode = "Fullscreen"
+startup_mode = "Windowed"
 
 [general]
 live_config_reload = true

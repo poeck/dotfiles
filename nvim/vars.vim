@@ -44,5 +44,5 @@ let g:fzf_vim = {}
 
 let g:augment_workspace_folders = ["~/dev/otark"]
 
-let g:system_copy#copy_command='xclip -sel clipboard'
-let g:system_copy#paste_command='xclip -sel clipboard -o'
+let g:system_copy#copy_command='wl-copy'
+let g:system_copy#paste_command='wl-paste'

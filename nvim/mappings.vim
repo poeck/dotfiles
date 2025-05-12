@@ -4,11 +4,6 @@
 
 " Set leader
 let mapleader = "\<Space>"
-let mapleader = "\<Space>"
-let mapleader = "\<Space>"
-let mapleader = "\<Space>"
-let mapleader = "\<Space>"
-let mapleader = "\<Space>"
 
 " Any mode
 noremap gf :edit <cfile><cr> 
@@ -47,6 +42,7 @@ nnoremap <silent> <leader>ga :G add .<CR>
 nnoremap <silent> <leader>gp :G push<CR>
 nnoremap <silent> <leader>y :!xdg-open %<CR><CR>
 nnoremap <silent> <leader>x :!xdg-open %:h<CR><CR>
+nnoremap <silent> <leader>c :!code %<CR><CR>
 nnoremap <silent> <leader>fl :Oil --float<CR>
 nnoremap <silent> <Esc> :call coc#float#close_all() <CR>
 nnoremap <silent> <S-k> :call CocAction('doHover')<CR>
