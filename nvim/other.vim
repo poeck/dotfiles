@@ -85,7 +85,7 @@ require("oil").setup({
 
 require("supermaven-nvim").setup({
   keymaps = {
-    accept_suggestion = "<Tab>",
+    accept_suggestion = "<S-F12>",
     clear_suggestion = "<C-]>",
     accept_word = "<C-j>",
   },
